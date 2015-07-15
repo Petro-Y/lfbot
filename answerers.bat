@@ -1,0 +1,1 @@
+@grep document\.forms\.postmodify\.message |sed -e 1d -e "s [^\"\"]*[\"\"]\([^\"\"]*\).* \1 "

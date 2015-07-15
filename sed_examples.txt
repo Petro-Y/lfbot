@@ -1,0 +1,21 @@
+Examples of sed:
+sed -n /^<form/,/^<\/form/p <lf.html
+sed -n /^<form.*post2/,/^<\/form/p <lf.html|sed /^<script/,/^<\/script/d
+sed -n /^<form.*post2/,/^<\/form/p <lf.html|sed /^<script/,/^<\/script/d|grep name
+sed -e "s/%/%25/g" -e "s/\&/%26/g"
+
+D:\Python\clojure>echo ABCD [ZXYW] | sed -e /A/bl1 -e y/ABCD/abcd/ -e :l1 -e y/WXYZ/wxyz/
+ABCD [zxyw]
+
+D:\Python\clojure>echo BCD [ZXYW] | sed -e /A/bl1 -e y/ABCD/abcd/ -e :l1 -e y/WXYZ/wxyz/
+bcd [zxyw]
+
+Joining lines (but how does it work?!?!):
+sed -e :a -e "$!N; s/\n/ /; ta"
+
+Usernames: own name & names of message writers:
+grep "id=\"name\""<lf.html|sed "s|.*<em>\([^<]*\)</em>.*|\1|"
+grep document\.forms\.postmodify\.message <lf.html |sed -e 1d -e "s/[^\"\"]*[\"\"]\([^\"\"]*\).*/\1/"
+
+Other examples:
+(echo begin|tr -d \n\r ) & echo end

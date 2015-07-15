@@ -1,0 +1,3 @@
+schtasks /create /tn notepad /tr notepad.exe /sc once /st 09:55:00 /ru Python /rp 1234
+schtasks /create /tn karmabot /tr D:\Python\bat\bot\karmabot.bat   /sc minute /mo 181 /st 14:17:30 /ru Python /rp 1234
+schtasks /delete /tn karmabot
