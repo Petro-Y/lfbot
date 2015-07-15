@@ -1,0 +1,1 @@
+fortune messages.txt|lfpost http://lingvoforum.net/index.php/topic,35148.new.html
